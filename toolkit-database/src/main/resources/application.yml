@@ -1,0 +1,29 @@
+# Server settings
+server:
+  port: 8088
+  address: 0.0.0.0
+  servlet:
+    context-path: /
+spring:
+  datasource:
+    # mysql示例数据库sakila
+    sakila:
+      # 支持IPV6
+      url: jdbc:mysql://address=(protocol=tcp)(host=localhost)(port=3306)/sakila?characterEncoding=UTF-8&useUnicode=true&serverTimezone=GMT%2b8
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      connection-test-query: SELECT 2
+    # mysql示例数据库world
+    world:
+      url: jdbc:mysql://address=(protocol=tcp)(host=localhost)(port=3306)/world?characterEncoding=UTF-8&useUnicode=true&serverTimezone=GMT%2b8
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      connection-test-query: SELECT 2
+logging:
+  level:
+    ROOT: DEBUG
+
