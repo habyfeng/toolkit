@@ -13,6 +13,7 @@
         <module>toolkit-io</module>
         <module>toolkit-network</module>
         <module>toolkit-database</module>
+        <module>distributed-tx</module>
     </modules>
 
     <properties>
