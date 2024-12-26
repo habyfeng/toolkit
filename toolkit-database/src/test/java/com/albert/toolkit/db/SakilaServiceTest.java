@@ -28,6 +28,14 @@ public class SakilaServiceTest {
     }
 
     @Test
+    public void testQueryActorList() {
+        int actorId = 1;
+        Actor actor = sakilaService.queryPossibleActor(actorId);
+        System.out.println("===========" + actor);
+    }
+
+
+    @Test
     public void testInsertFilmAndActor() {
         Actor actor = new Actor();
         actor.setFirstName("fangyi");
@@ -38,6 +46,15 @@ public class SakilaServiceTest {
 
         int rows = sakilaService.insertFilmAndActor(film, actor);
         Assertions.assertEquals(2, rows);
+    }
+
+    /**
+     * 测试表中无数据的场景
+     */
+    @Test
+    public void testQueryOnlyActor() {
+        Actor actor = sakilaService.queryOnlyActor();
+        System.out.println(actor);
     }
 
 }

@@ -7,9 +7,12 @@ import com.albert.toolkit.db.entity.Film;
 import com.albert.toolkit.db.mapper.ActorMapper;
 import com.albert.toolkit.db.mapper.FilmMapper;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  * 动态数据库使用样例
@@ -34,6 +37,14 @@ public class SakilaService {
         return actorMapper.selectOne(queryWrapper);
     }
 
+    @DbSource
+    public Actor queryPossibleActor(int actorId) {
+        LambdaQueryWrapper<Actor> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(Actor::getActorId, actorId);
+        List<Actor> actors = actorMapper.selectList(queryWrapper);
+        return actors.stream().findFirst().orElse(null);
+    }
+
     /**
      * 显式指定数据库
      */
@@ -50,4 +61,15 @@ public class SakilaService {
         return filmRows + actorRows;
     }
 
+    public int saveFilm(Film film) {
+        return filmMapper.insert(film);
+    }
+
+    public int saveActor(Actor actor) {
+        return actorMapper.insert(actor);
+    }
+
+    public Actor queryOnlyActor() {
+        return actorMapper.selectOne(new QueryWrapper<>());
+    }
 }
