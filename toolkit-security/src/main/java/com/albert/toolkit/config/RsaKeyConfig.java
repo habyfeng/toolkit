@@ -13,6 +13,7 @@ import java.security.cert.CertificateException;
  */
 @Getter
 public class RsaKeyConfig {
+
     private static final String keyStoreFileName = "/foo.jks";
     private final PublicKey publicKey;
     private final PrivateKey privateKey;

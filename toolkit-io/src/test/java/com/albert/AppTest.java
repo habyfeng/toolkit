@@ -1,5 +1,6 @@
 package com.albert;
 
+import com.albert.toolkit.File.FileSysKit;
 import com.albert.toolkit.csv.CarPosition;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
@@ -8,6 +9,7 @@ import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -86,6 +88,18 @@ public class AppTest {
 
         BigDecimal amt10 = new BigDecimal("0.01");
         System.out.println("10========" + new DecimalFormat("0.00").format(amt10));
+    }
+
+    @Test
+    public void testDis() {
+        List<String> dist = List.of("aaa", "aab").stream().distinct().toList();
+        System.out.println(dist);
+    }
+
+    @Test
+    public void testGetCurrentPath() {
+        // 一直到toolkit\toolkit-io，如D:\work\toolkit\dev\toolkit\toolkit-io
+        System.out.println(FileSysKit.getCurrentPath());
     }
 
 }
