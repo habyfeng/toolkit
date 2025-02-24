@@ -1,0 +1,24 @@
+jasypt:
+  encryptor:
+    # 密钥，默认的加密算法是 PBEWITHHMACSHA512ANDAES_256。
+    # 不能与密文放在一起，可以在项目当中通过系统属性、命令行参数或环境变量传递。
+    password: zz919zz
+    algorithm: PBEWITHHMACSHA512ANDAES_256
+    property:
+      # 密文前缀，如果不配置，默认的密文前缀是 "ENC("，密文后缀是")"
+#      prefix:
+      # 密文后缀
+#      suffix:
+
+spring:
+  datasource:
+    # mysql示例数据库sakila
+    sakila:
+      # 支持IPV6
+      url: jdbc:mysql://address=(protocol=tcp)(host=localhost)(port=3306)/sakila?characterEncoding=UTF-8&useUnicode=true&serverTimezone=GMT%2b8
+      username: root
+      # 123456
+      password: ENC(HWw5ZSmp1MISQCfP8G3nlrGifNqAEN6kmNeFTusPbKAAZsN58bgleYSDb4v6ByZZ)
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      connection-test-query: SELECT 2
