@@ -1,37 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>toolkit</artifactId>
         <groupId>com.albert</groupId>
+        <artifactId>toolkit</artifactId>
         <version>1.0</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
-    <artifactId>toolkit-network</artifactId>
-    <name>toolkit-network</name>
+
+    <artifactId>toolkit-api</artifactId>
+    <packaging>jar</packaging>
+
+    <name>toolkit-api</name>
+    <url>http://maven.apache.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>org.apache.httpcomponents.client5</groupId>
-            <artifactId>httpclient5</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.albert</groupId>
-            <artifactId>toolkit-data</artifactId>
-            <version>1.0</version>
         </dependency>
     </dependencies>
 </project>

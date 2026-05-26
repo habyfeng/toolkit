@@ -17,6 +17,8 @@
         <module>toolkit-redis</module>
         <module>toolkit-security</module>
         <module>toolkit-jasypt</module>
+        <module>toolkit-data</module>
+        <module>toolkit-api</module>
     </modules>
 
     <properties>
@@ -111,6 +113,11 @@
                 <groupId>org.springframework.security</groupId>
                 <artifactId>spring-security-test</artifactId>
                 <version>6.3.1</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>32.0.0-jre</version>
             </dependency>
             <dependency>
                 <!-- Import dependency management from Spring Boot -->
